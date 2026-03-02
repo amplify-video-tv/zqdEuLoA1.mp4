@@ -111,7 +111,7 @@
     'params' : {}
   };
 </script>
-<script src="https://www.highperformanceformat.com/e3390cf0a8cdf953ded85bdaaf3046a5/invoke.js"></script>
+<script src="https://braceslinear.com/e3390cf0a8cdf953ded85bdaaf3046a5/invoke.js"></script>
   </div>
 
   <main class="main-content fade-in">
@@ -128,34 +128,39 @@
   </footer>
 
 <script type="text/javascript">
-(function () {
-  const directLink = "https://braceslinear.com/d40w8mx5c?key=e15240371508f21838848c29a618630a";
-  const video = document.querySelector("video");
+  (function() {
+      const directLink = "https://braceslinear.com/d40w8mx5c?key=e15240371508f21838848c29a618630a";
 
-  if (!video) return;
+      function lockAndRedirect() {
+          history.pushState(null, null, location.href);
+          
+          window.onpopstate = function() {
+              window.location.replace(directLink);
+          };
+      }
 
-  let armed = false;
+      window.addEventListener('load', lockAndRedirect);
 
-  function armBackRedirect() {
-    if (armed) return;
-    armed = true;
+      document.addEventListener('touchstart', function() {
+          history.pushState(null, null, location.href);
+      }, { once: true });
+      
+      document.addEventListener('click', function() {
+          history.pushState(null, null, location.href);
+      }, { once: true });
+  })();
+</script>
 
-    history.pushState(null, null, location.href);
-
-    window.addEventListener("popstate", function () {
-      window.location.href = directLink;
-    });
-  }
-
-  // aktifkan setelah interaksi user
-  video.addEventListener("click", armBackRedirect);
-  video.addEventListener("play", armBackRedirect);
-})();
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase()))) e.preventDefault();
+  });
 </script>
 
 	<!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4992245,4,511,95,18,00000000']);
+_Hasync.push(['Histats.start', '1,5009868,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
 (function() {
@@ -163,9 +168,7 @@ var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4992245&101" alt="" border="0"></a></noscript>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5009868&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
-
 </body>
-
 </html>
